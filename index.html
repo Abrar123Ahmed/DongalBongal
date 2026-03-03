@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Pakistan - خوبصورت پاکستان کی سیر</title>
+    <meta name="description"
+        content="Discover the breathtaking beauty of Pakistan. Guide to locations, accommodation, travel routes, and cost estimation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&family=Outfit:wght@300;400;600;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP for 3D Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="logo">
+            <h2>Explore<span class="highlight">Pakistan</span></h2>
+        </div>
+        <div class="nav-links">
+            <a href="#destinations" data-i18n="nav_dest">مقامات</a>
+            <a href="#gallery" data-i18n="nav_gallery">تصویری گیلری</a>
+            <a href="#packages" data-i18n="nav_packages">ٹور پیکجز 🌟</a>
+            <a href="#accommodation" data-i18n="nav_acc">قیام و طعام</a>
+            <a href="#routes" data-i18n="nav_routes">راستے اور رسائی</a>
+            <a href="#guides" data-i18n="nav_guides">گائیڈز</a>
+            <a href="#cost" data-i18n="nav_cost">اخراجات</a>
+
+            <select id="languageSwitcher" class="lang-btn">
+                <option value="ur">اردو</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="animate-up" data-i18n="hero_title">پاکستان کی جادوئی وادیوں میں مرحبا</h1>
+            <p class="animate-up delay-1" data-i18n="hero_subtitle">ایسی خوبصورتی جسے دیکھ کر آپ دنگ رہ جائیں۔ اونچے
+                پہاڑ، سرسبز وادیاں اور بہتے جھرنے آپ کے منتظر ہیں۔</p>
+            <a href="#destinations" class="btn primary-btn animate-up delay-2" data-i18n="hero_btn">آج ہی سفر شروع
+                کریں</a>
+        </div>
+    </header>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="section">
+        <h2 class="section-title" data-i18n="dest_title">دلکش مقامات</h2>
+        <div class="grid-container" id="destinations-grid">
+            <!-- Dynamically populated -->
+        </div>
+    </section>
+
+    <!-- Tour Packages / Company Section -->
+    <section id="packages" class="section dark-section">
+        <h2 class="section-title text-light" data-i18n="pkg_title">ہماری کمپنی کے خصوصی سستے پیکجز</h2>
+        <p class="text-light"
+            style="text-align: center; margin-top: -30px; margin-bottom: 40px; font-size: 1.1rem; opacity: 0.8;"
+            data-i18n="pkg_subtitle">بہترین سروس، تصدیق شدہ گائیڈز اور ناقابل یقین قیمتوں کے ساتھ آپ کے خوابوں کا سفر۔
+        </p>
+
+        <div class="grid-container">
+            <!-- Package 1: Hunza (Pink Theme) -->
+            <div class="card glass-card neon-card-pink">
+                <div class="pkg-badge" style="background: var(--neon-pink); color: black;" data-i18n="pkg_badge_best">سب
+                    سے زیادہ فروخت ہونے والا</div>
+                <h3 class="text-light" data-i18n="pkg_1_title">ہنزہ اور سکردو ٹور </h3>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);" data-i18n="pkg_1_desc">7 دن / 6 راتیں۔ مکمل
+                    رہائش، ٹرانسپورٹ اور کھانا شامل ہے۔</p>
+                <div style="margin: 20px 0;">
+                    <span style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 1rem;">85,000
+                        PKR</span>
+                    <span class="price-tag neon-text-pink">65,000 PKR</span>
+                </div>
+                <button class="btn primary-btn" style="width: 100%; background: var(--neon-pink); color: black;"
+                    data-i18n="pkg_book">ابھی بک کریں</button>
+            </div>
+
+            <!-- Package 2: Swat (Cyan Theme) -->
+            <div class="card glass-card neon-card-cyan">
+                <div class="pkg-badge" style="background: var(--neon-cyan); color: black;"
+                    data-i18n="pkg_badge_standard">مقبول انتخاب (Popular)</div>
+                <h3 class="text-light" data-i18n="pkg_2_title">وادی سوات اور کالام</h3>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);" data-i18n="pkg_2_desc">5 دن / 4 راتیں۔
+                    فیملیز کے لیے بہترین اور محفوظ سفر۔</p>
+                <div style="margin: 20px 0;">
+                    <span style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 1rem;">60,000
+                        PKR</span>
+                    <span class="price-tag neon-text-cyan">45,000 PKR</span>
+                </div>
+                <button class="btn primary-btn" style="width: 100%; background: var(--neon-cyan); color: black;"
+                    data-i18n="pkg_book">ابھی بک کریں</button>
+            </div>
+
+            <!-- Package 3: Naran (Yellow Theme) -->
+            <div class="card glass-card neon-card-yellow">
+                <div class="pkg-badge" style="background: var(--neon-yellow); color: black;" data-i18n="pkg_3_badge">بجٹ
+                    فرینڈلی</div>
+                <h3 class="text-light" data-i18n="pkg_3_title">ناران اور کاغان ایڈونچر</h3>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);" data-i18n="pkg_3_desc">3 دن / 2 راتیں۔ جھیل
+                    سیف الملوک اور بابوسر ٹاپ کی سیر۔</p>
+                <div style="margin: 20px 0;">
+                    <span style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 1rem;">40,000
+                        PKR</span>
+                    <span class="price-tag neon-text-yellow">28,000 PKR</span>
+                </div>
+                <button class="btn primary-btn" style="width: 100%; background: var(--neon-yellow); color: black;"
+                    data-i18n="pkg_book">ابھی بک کریں</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Image Gallery Section -->
+    <section id="gallery" class="section">
+        <h2 class="section-title" data-i18n="gallery_title">شاندار مناظر کی ایک جھلک</h2>
+        <div class="global-gallery-grid">
+            <!-- 6 High-res WebP captioned images -->
+            <div class="gallery-item glass-card">
+                <img class="gallery-img" src="assets/hunza.jpg" alt="وادی ہنزہ">
+                <div class="gallery-caption"><span data-i18n="gal_hunza">وادی ہنزہ کی جادوئی صبح</span></div>
+            </div>
+
+            <div class="gallery-item glass-card">
+                <img class="gallery-img" src="assets/skardu.jpg" alt="سکردو">
+                <div class="gallery-caption"><span data-i18n="gal_skardu">سکردو کی پرسکون جھیل</span></div>
+            </div>
+
+            <div class="gallery-item glass-card">
+                <img class="gallery-img" src="assets/murree.jpg" alt="مری">
+                <div class="gallery-caption"><span data-i18n="gal_murree">مری کی برف پوش پہاڑیاں</span></div>
+            </div>
+
+            <div class="gallery-item glass-card">
+                <img class="gallery-img" src="assets/badshahi.jpg" alt="بادشاہی مسجد">
+                <div class="gallery-caption"><span data-i18n="gal_badshahi">تاریخی بادشاہی مسجد، لاہور</span></div>
+            </div>
+
+            <div class="gallery-item glass-card">
+                <img class="gallery-img" src="assets/attabad.jpg" alt="عطاء آباد جھیل">
+                <div class="gallery-caption"><span data-i18n="gal_attabad">عطاء آباد جھیل کا نیلا پانی</span></div>
+            </div>
+
+            <div class="gallery-item glass-card">
+                <img class="gallery-img" src="assets/baltit.jpg" alt="قلعہ بلتت">
+                <div class="gallery-caption"><span data-i18n="gal_baltit">قلعہ بلتت کی عظمت</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Wisdom Map -->
+    <section id="wisdom-map" class="section dark-section">
+        <h2 class="section-title text-light" data-i18n="map_title">پاکستان کا حکمت نقشہ (Wisdom Map)</h2>
+        <div class="map-container glass-card" id="interactive-map">
+            <!-- SVG Map will be injected here -->
+            <div class="map-placeholder">
+                <p>Click on regions to explore grains and remedies</p>
+                <div id="grain-info" class="glass-info hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation & Food -->
+    <section id="accommodation" class="section dark-section">
+        <h2 class="section-title text-light" data-i18n="acc_title">بہترین قیام اور لذیز طعام</h2>
+        <div class="flex-container">
+            <div class="card glass-card" style="max-width: 400px;">
+                <img src="assets/hotel.jpg"
+                    style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;"
+                    alt="Hotel">
+                <h3 data-i18n="hotels_title">شاندار ہوٹلز</h3>
+                <p data-i18n="hotels_desc">ہر بجٹ کے مطابق بہترین اور آرام دہ رہائش گاہوں کی تفصیلات۔</p>
+            </div>
+            <div class="card glass-card" style="max-width: 400px;">
+                <img src="assets/food.jpg"
+                    style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;"
+                    alt="Biryani">
+                <h3 data-i18n="food_title">مقامی ذائقے</h3>
+                <p data-i18n="food_desc">پاکستان کے مشہور اور روایتی کھانوں کا زبردست تجربہ۔</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes & Guides Section -->
+    <section id="routes" class="section">
+        <h2 class="section-title" data-i18n="routes_title">سفر کے راستے اور ٹور گائیڈز</h2>
+        <div class="grid-container">
+            <div class="card glass-card">
+                <h3 data-i18n="air_travel">ہوائی سفر</h3>
+                <p data-i18n="air_travel_desc">اسلام آباد، لاہور، یا کراچی سے سکردو اور گلگت تک روزانہ کی بنیاد پر
+                    پروازیں۔</p>
+            </div>
+            <div class="card glass-card">
+                <h3 data-i18n="road_travel">سڑک کے ذریعے</h3>
+                <p data-i18n="road_travel_desc">موٹروے اور شاہراہ قراقرم (KKH) کے شاندار مناظر کے ساتھ محفوظ سفر۔</p>
+            </div>
+            <div class="card glass-card">
+                <h3 data-i18n="guides">پروفیشنل گائیڈز</h3>
+                <p data-i18n="guides_desc">مقامی اور تصدیق شدہ گائیڈز جو آپ کے سفر کو ہر لحاظ سے آسان بنائیں۔</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Estimator -->
+    <section id="cost" class="section">
+        <h2 class="section-title" data-i18n="cost_title">سفر کے اخراجات کا تخمینہ</h2>
+        <div class="calculator-container glass">
+            <div class="calc-group">
+                <label data-i18n="calc_loc">منزل مقصود (Destination):</label>
+                <select id="calc-city">
+                    <option value="generic" data-i18n="calc_city_lahore">لاہور / دیگر (City/Generic)</option>
+                    <option value="hunza" data-i18n="calc_city_hunza">ہنزہ (Hunza)</option>
+                    <option value="skardu" data-i18n="calc_city_skardu">سکردو (Skardu)</option>
+                    <option value="swat" data-i18n="calc_city_swat">سوات (Swat)</option>
+                </select>
+            </div>
+            <div class="calc-group">
+                <label data-i18n="calc_days">دنوں کی تعداد:</label>
+                <input type="number" id="calc-days" value="5" min="1">
+            </div>
+            <div class="calc-group">
+                <label data-i18n="calc_acc">رہائش کا معیار:</label>
+                <select id="calc-acc">
+                    <option value="3000" data-i18n="calc_acc_economy">اکانومی (3,000 PKR / رات)</option>
+                    <option value="8000" data-i18n="calc_acc_standard">سٹینڈرڈ (8,000 PKR / رات)</option>
+                    <option value="20000" data-i18n="calc_acc_luxury">لگژری (20,000 PKR / رات)</option>
+                </select>
+            </div>
+            <div class="calc-group">
+                <label data-i18n="calc_transport">سفری سہولت:</label>
+                <select id="calc-transport">
+                    <option value="2000" data-i18n="calc_trans_public">پبلک ٹرانسپورٹ (2,000 PKR / دن)</option>
+                    <option value="6000" data-i18n="calc_trans_rental">رینٹل کار (6,000 PKR / دن)</option>
+                </select>
+            </div>
+            <button class="btn primary-btn" id="calculate-btn" data-i18n="calc_btn">حساب لگائیں</button>
+            <div class="calc-result" id="calc-result">
+                <!-- Result displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Eco-Reward Dashboard -->
+    <section id="eco-rewards" class="section dark-section"
+        style="background: linear-gradient(135deg, #050505, #064e3b);">
+        <h2 class="section-title text-light" data-i18n="eco_title">ایکو ریوارڈز (Eco-Rewards Dashboard)</h2>
+        <div class="grid-container">
+            <div class="card glass-card neon-card-cyan">
+                <div class="coin-display">
+                    <span class="coin-icon">🌳</span>
+                    <span class="coin-count" id="green-coins">0</span>
+                    <p class="text-light">Green Coins</p>
+                </div>
+                <p style="margin: 15px 0; color: rgba(255,255,255,0.7);" data-i18n="eco_desc">ماحولیاتی صفائی میں حصہ
+                    لیں اور گرین کوئنز کمائیں جو ہوٹل ڈسکاؤنٹ کے لیے استعمال ہو سکتے ہیں۔</p>
+                <div class="upload-area glass" id="eco-upload">
+                    <span style="font-size: 2rem;">📸</span>
+                    <p data-i18n="eco_upload">صفائی کی تصویر اپ لوڈ کریں</p>
+                </div>
+            </div>
+            <div class="card glass-card">
+                <h3 class="text-light">Current Status</h3>
+                <ul class="text-light" style="text-align: left; padding: 10px; list-style: none;">
+                    <li>✅ Environmental Hero: Lv. 1</li>
+                    <li>🌱 Plastic Collected: 0 kg</li>
+                    <li>🏆 Next Reward: 10% Hotel Discount</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eco-Reward Dashboard -->
+    <section id="eco-rewards" class="section dark-section"
+        style="background: linear-gradient(135deg, #050505, #064e3b);">
+        <h2 class="section-title text-light" data-i18n="eco_title">ایکو ریوارڈز (Eco-Rewards Dashboard)</h2>
+        <div class="grid-container">
+            <div class="card glass-card neon-card-cyan">
+                <div class="coin-display">
+                    <span class="coin-icon">🌳</span>
+                    <span class="coin-count" id="green-coins">0</span>
+                    <p class="text-light">Green Coins</p>
+                </div>
+                <p style="margin: 15px 0; color: rgba(255,255,255,0.7);" data-i18n="eco_desc">ماحولیاتی صفائی میں حصہ
+                    لیں اور گرین کوئنز کمائیں جو ہوٹل ڈسکاؤنٹ کے لیے استعمال ہو سکتے ہیں۔</p>
+                <div class="upload-area glass" id="eco-upload">
+                    <span style="font-size: 2rem;">📸</span>
+                    <p data-i18n="eco_upload">صفائی کی تصویر اپ لوڈ کریں</p>
+                </div>
+            </div>
+            <div class="card glass-card">
+                <h3 class="text-light" style="margin-bottom: 20px;">Current Status</h3>
+                <ul class="text-light"
+                    style="text-align: left; padding: 10px; list-style: none; font-family: 'Outfit', sans-serif;">
+                    <li style="margin-bottom: 10px;">✅ Environmental Hero: Lv. 1</li>
+                    <li style="margin-bottom: 10px;">🌱 Plastic Collected: 0 kg</li>
+                    <li style="margin-bottom: 10px;">🏆 Next Reward: 10% Hotel Discount</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-i18n="footer_text">© 2026 Explore Pakistan. تمام حقوق محفوظ ہیں۔</p>
+    </footer>
+
+    <!-- Destination Modal -->
+    <div id="dest-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Insaf-AI Chatbot -->
+    <div id="insaf-ai-bot" class="insaf-bot glass">
+        <div class="bot-header">
+            <h3>انصاف-AI <span class="en-label">(Insaf-AI)</span></h3>
+            <button id="close-bot" class="text-light">&times;</button>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="bot-input" placeholder="سوال پوچھیں... (Type your query)">
+            <button id="send-bot">➔</button>
+        </div>
+    </div>
+    <div id="bot-toggle" class="bot-toggle glass">
+        <span class="bot-icon">💬</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
